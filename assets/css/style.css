@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;    
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+body {
+    line-height: 1.7rem;
+}
+
+main {
+    width: 60%;
+    margin: 0 auto;   
+}
+
+input {
+    margin: 2px 0;
+}
+
+.container,
+.radio-btn {
+    display: flex;
+}
+
+.container *, 
+.radio-btn * {
+    flex: 1;
+}
+

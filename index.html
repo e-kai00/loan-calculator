@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="" content="">
     <meta name="keywords" content="">
-    <link rel="stylesheet" href="assets/css/style.css">    
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Loan Calculator</title>
 </head>
 
@@ -19,29 +19,44 @@
 
     <main>
         <!-- calculator parameters -->
-        <div>
+        <div class="container">
             <label for="ammount">Loan Ammount</label>
-            <input type="text" id="ammount">            
+            <input type="text" id="ammount">
         </div>
-        <div>
+        <div class="container">
             <label for="term">Loan Term</label>
             <input type="text" id="term">
         </div>
-        <div>
+        <div class="container">
             <label for="rate">Interest Rate</label>
             <input type="text" id="rate">
         </div>
-        <div>
+        <div class="radio-btn">
             <label>Type of Pay Back</label>
-            <input type="radio" id="type1" name="payback-type" value="option1" checked>  
-            <label for="type1">Option 1</label>
-
-            <input type="radio" id="type2" name="payback-type" value="option2">
-            <label for="type2">Option 2</label>        
+            <div>
+                <input type="radio" id="type1" name="payback-type" value="option1" checked>
+                <label for="type1">Option 1</label>
+                <input type="radio" id="type2" name="payback-type" value="option2">
+                <label for="type2">Option 2</label>
+            </div>
         </div>
         <button type="button">Calculate</button>
         <button type="button">Clear</button>
+
         <hr>
+
+        <div class="container">
+            <p>Payment every month</p>
+            <p></p>
+        </div>
+        <div class="container">
+            <p>Total interest</p>
+            <p></p>
+        </div>
+        <div class="container">
+            <p>Loan + interest</p>
+            <p></p>
+        </div>
 
         <!-- calculated results -->
 
@@ -49,4 +64,5 @@
     <script src="https://kit.fontawesome.com/624b5d3773.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
