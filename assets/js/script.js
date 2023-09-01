@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
     totalInterest.innerHTML = 0;
     loanInterest.innerHTML = 0;
 
+    document.querySelector('#calculate-button').addEventListener('click', calculate);
+    document.querySelector('#clear-button').addEventListener('click', clearInput)
+
     // loanInput.value = 10000;
     // loanTermInput.value = 3;
     // interestRateInput.value = 5;
@@ -44,6 +47,13 @@ function calculate() {
         loanInterest.innerHTML = "";
         alert('Something went wrong. Please, try again.');
     }
-    
-
 }
+
+function clearInput() {
+    let inputElements = document.querySelectorAll('input');
+    inputElements.forEach(element => {
+        element.value = ''
+    })
+}
+
+// issues: <input> accesps negative num
