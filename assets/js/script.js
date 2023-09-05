@@ -3,24 +3,76 @@ let totalInterest = document.querySelector('#interest');
 let loanInterest = document.querySelector('#loan-interest');
 let loanInput = document.querySelector('#ammount');
 let loanTermInput = document.querySelector('#years');
-let interestRateInput = document.querySelector('#rate')
+let interestRateInput = document.querySelector('#rate');
+let messageText = document.querySelector('#message');
+let calculateButton = document.querySelector('#calculate-button');
+let inputs;
+let principal;
+let interest;
+let payments; 
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
     paymentEveryMo.innerHTML = 0;
     totalInterest.innerHTML = 0;
     loanInterest.innerHTML = 0;
+    
+    calculateButton.disabled = true;
+
+    inputs = document.querySelectorAll('input');
+    inputs.forEach(input => input.addEventListener('keyup', inputValidation))
 
     document.querySelector('#calculate-button').addEventListener('click', calculate);
-    document.querySelector('#clear-button').addEventListener('click', clearInput)
-
-    // loanInput.value = 10000;
-    // loanTermInput.value = 3;
-    // interestRateInput.value = 5;
-
-    // calculate()
-
+    document.querySelector('#clear-button').addEventListener('click', clearInput);
+    
 });
+
+function inputValidation() {
+
+    let principalIsValid = false;
+    let paymentsIsValid = false;
+    let interestIsValid = false;    
+    let message = '';
+
+    principal = parseFloat(loanInput.value);
+    interest = parseFloat(interestRateInput.value);
+    payments = parseFloat(loanTermInput.value);    
+
+    if (principal === '') {
+        message = '';
+
+    } else if (principal < 0) {
+        message = 'Should be more than 0'
+    } else {
+        principalIsValid = true;
+    }
+
+    if (payments === '') {
+        message = '';
+    } else if (payments < 0 || payments > 30) {
+        message = 'Should be withtin 0 - 30';
+    } else {
+        paymentsIsValid = true;
+    }
+
+    if (interest === 0) {
+        message = '';
+    } else if (interest < 0 || interest > 100 ) {
+        message = 'Should be within 0 - 100';
+    } else {
+        interestIsValid = true;
+    }
+
+    messageText.innerText = message;
+
+    if (principalIsValid && paymentsIsValid && interestIsValid) {
+         calculateButton.disabled = false;
+    } else {
+        calculateButton.disabled = true;
+    }
+       
+}
 
 function calculate() {
 
@@ -28,9 +80,8 @@ function calculate() {
     // Convert from an annual rate to a monthly rate.
     // Convert payment period in years to the number of monthly payments.
 
-    let principal = parseFloat(loanInput.value);
-    let interest = parseFloat(interestRateInput.value) / 100 / 12;
-    let payments = parseFloat(loanTermInput.value) * 12;
+    interest = interest / 100 / 12;
+    payments = payments * 12;
 
     // monthly payments
     let x = Math.pow(1 + interest, payments);    
@@ -40,7 +91,8 @@ function calculate() {
     if (isFinite(monthly)) {
         paymentEveryMo.innerHTML = monthly.toFixed(2);
         totalInterest.innerHTML = ((monthly*payments)-principal).toFixed(2);
-        loanInterest.innerHTML = (monthly * payments).toFixed(2);
+        loanInterest.innerHTML = (monthly * payments).toFixed(2);        
+
     } else {
         paymentEveryMo.innerHTML = "";
         totalInterest.innerHTML = "";
@@ -54,6 +106,9 @@ function clearInput() {
     inputElements.forEach(element => {
         element.value = ''
     })
+
+    paymentEveryMo.innerHTML = 0;
+    totalInterest.innerHTML = 0;
+    loanInterest.innerHTML = 0;
 }
 
-// issues: <input> accesps negative num

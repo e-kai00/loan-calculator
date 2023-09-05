@@ -21,25 +21,19 @@
         <!-- calculator parameters -->
         <div class="container">
             <label for="ammount">Loan Ammount</label>
-            <input type="text" id="ammount">
+            <input type="number" id="ammount" min="1000" max="10000000" required>
         </div>
         <div class="container">
             <label for="term">Loan Term</label>
-            <input type="text" id="years">
+            <input type="number" id="years" min="1" max="30" required>
         </div>
         <div class="container">
             <label for="rate">Interest Rate</label>
-            <input type="text" id="rate">
+            <input type="number" id="rate" step="0.01" min="0" max="100" required>
         </div>
-        <div class="radio-btn">
-            <label>Type of Pay Back</label>
-            <div>
-                <input type="radio" id="type1" name="payback-type" value="option1" checked>
-                <label for="type1">Option 1</label>
-                <input type="radio" id="type2" name="payback-type" value="option2">
-                <label for="type2">Option 2</label>
-            </div>
-        </div>
+        
+        <p id="message"></p>
+              
         <!-- buttons -->
         <button type="button" id="calculate-button">Calculate</button>
         <button type="button" id="clear-button">Clear</button>
