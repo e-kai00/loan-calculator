@@ -27,32 +27,34 @@
             <label for="term">Loan Term</label>
             <input type="number" id="years" min="1" max="30" required>
         </div>
-        <div class="container">
+        <div class="container rate">
             <label for="rate">Interest Rate</label>
             <input type="number" id="rate" step="0.01" min="0" max="100" required>
         </div>
-        
+
         <p id="message"></p>
-              
-        <!-- buttons -->
-        <button type="button" id="calculate-button">Calculate</button>
-        <button type="button" id="clear-button">Clear</button>
+        
+        <div class="container btns">
+            <!-- buttons -->
+            <button type="button" id="calculate-button">Calculate</button>
+            <button type="button" id="clear-button">Clear</button>
+        </div>
 
         <hr>
 
         <!-- calculated results -->
         <div class="container">
             <p>Payment every month</p>
-            <p id="payment-mo"></p>
+            <p id="payment-mo" class="result"></p>
         </div>
         <div class="container">
             <p>Total interest</p>
-            <p id="interest"></p>
+            <p id="interest" class="result"></p>
         </div>
         <div class="container">
             <p>Loan + interest</p>
-            <p id="loan-interest"></p>
-        </div>       
+            <p id="loan-interest" class="result"></p>
+        </div>
 
     </main>
     <script src="https://kit.fontawesome.com/624b5d3773.js" crossorigin="anonymous"></script>

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     inputs = document.querySelectorAll('input');
     inputs.forEach(input => input.addEventListener('keyup', inputValidation))
 
-    document.querySelector('#calculate-button').addEventListener('click', calculate);
+    calculateButton.addEventListener('click', calculate);
     document.querySelector('#clear-button').addEventListener('click', clearInput);
     
 });
