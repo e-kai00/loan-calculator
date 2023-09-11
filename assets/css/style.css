@@ -36,7 +36,7 @@ main {
     width: 50%;
     margin: 0 auto;   
     padding: 25px 20px;
-    border: 1px solid #303030;
+    border: 1px solid #666;
     border-radius: 12px;
     background-color: #f9f8f4;
     
@@ -44,7 +44,7 @@ main {
 
 input {
     margin: 2px 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #666666;
 }
@@ -110,14 +110,22 @@ hr {
     font-size: .9rem;
 }
 
-/* @media screen and (max-width: 1080px) */
-/* @media (min-width: 576px) { ... }
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .rate::after {
+        /* content: '%'; */
+        font-size: 1.1rem;
+        /* position: absolute; */
+        right: 1rem;
+        bottom: 0;
+    }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { ... }
+    .result {
+        text-align: center;
+    }
+}
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { ... }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { ... } */
