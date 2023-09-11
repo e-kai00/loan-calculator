@@ -43,8 +43,8 @@ function inputValidation() {
     if (principal === '') {
         message = '';
 
-    } else if (principal < 0) {
-        message = 'Should be more than 0'
+    } else if (principal <= 0) {
+        message = 'Сумма должна быть больше 0'
     } else {
         principalIsValid = true;
     }
@@ -52,7 +52,7 @@ function inputValidation() {
     if (payments === '') {
         message = '';
     } else if (payments < 0 || payments > 30) {
-        message = 'Should be withtin 0 - 30';
+        message = 'Введите значение от 0 до 30';
     } else {
         paymentsIsValid = true;
     }
@@ -60,7 +60,7 @@ function inputValidation() {
     if (interest === 0) {
         message = '';
     } else if (interest < 0 || interest > 100 ) {
-        message = 'Should be within 0 - 100';
+        message = 'Значение не должно превышать 100';
     } else {
         interestIsValid = true;
     }
