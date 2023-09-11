@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,21 +13,21 @@
 
 <body>
     <header>        
-        <h1>Loan Calculator</h1>
+        <h1>Кредитный калькулятор</h1>
     </header>
 
     <main>
         <!-- calculator parameters -->
-        <div class="container">
-            <label for="ammount">Loan Ammount</label>
+        <div class="container currency">
+            <label for="ammount">Сумма кредита</label>
             <input type="number" id="ammount" min="1000" max="10000000" required>
         </div>
-        <div class="container">
-            <label for="term">Loan Term</label>
+        <div class="container years">
+            <label for="term">Срок кредита</label>
             <input type="number" id="years" min="1" max="30" required>
         </div>
         <div class="container rate">
-            <label for="rate">Interest Rate</label>
+            <label for="rate">Процентная ставка</label>
             <input type="number" id="rate" step="0.01" min="0" max="100" required>
         </div>
 
@@ -35,23 +35,23 @@
         
         <div class="container btns">
             <!-- buttons -->
-            <button type="button" id="calculate-button">Calculate</button>
-            <button type="button" id="clear-button">Clear</button>
+            <button type="button" id="calculate-button">Рассчитать</button>
+            <button type="button" id="clear-button">Очистить</button>
         </div>
 
         <hr>
 
         <!-- calculated results -->
         <div class="container">
-            <p>Payment every month</p>
+            <p>Ежемесячный платеж</p>
             <p id="payment-mo" class="result"></p>
         </div>
         <div class="container">
-            <p>Total interest</p>
+            <p>Начисленные проценты</p>
             <p id="interest" class="result"></p>
         </div>
         <div class="container">
-            <p>Loan + interest</p>
+            <p>Долг + проценты</p>
             <p id="loan-interest" class="result"></p>
         </div>
 

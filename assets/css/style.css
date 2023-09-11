@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 /* font-family: 'Roboto', sans-serif; */
 
-/* 
-#bb9709; - gold
-#666666 -grey for <h> fonts
-#3a3735; -  fonts
-#303030 - banner background
-#1e73be - blue links
-*/
 
 * {
     margin: 0;
@@ -53,6 +46,7 @@ input {
 .radio-btn {
     display: flex;
     margin-bottom: 5px;
+    position: relative;
 }
 
 .container *, 
@@ -92,22 +86,39 @@ hr {
     margin-bottom: 10px;
 }
 
-.rate {
+/* .rate {
     position: relative;
-}
+} */
 
 .rate::after {
     content: '%';
-    font-size: 1.1rem;    
+    font-size: .8rem;    
+    position: absolute;
+    right: 1rem;
+    
+}
+
+.years::after {
+    content: 'лет';
+    font-size: .8rem;    
+    position: absolute;
+    right: 1rem;
+    
+}
+
+.currency::after {
+    content: '₽';
+    font-size: .8rem;    
     position: absolute;
     right: 1rem;
     
 }
 
 .result::after {
-    content: '$';
-    margin-left: 2px;
+    content: '₽';
+    margin-left: .5rem;    
     font-size: .9rem;
+    
 }
 
 @media screen and (max-width: 600px) {
@@ -116,15 +127,33 @@ hr {
     }
     
     .rate::after {
-        /* content: '%'; */
-        font-size: 1.1rem;
-        /* position: absolute; */
+        font-size: .9rem;
+        right: 1rem;
+        bottom: 0;
+    }
+
+    .years::after {
+        font-size: .9rem;
+        right: 1rem;
+        bottom: 0;
+    }
+
+    .currency::after {
+        font-size: .9rem;
         right: 1rem;
         bottom: 0;
     }
 
     .result {
         text-align: center;
+    }
+
+    body {
+        font-size: .9rem;
+    }
+
+    main {
+        width: 80%;
     }
 }
 

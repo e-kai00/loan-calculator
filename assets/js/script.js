@@ -20,13 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     calculateButton.disabled = true;
 
-    inputs = document.querySelectorAll('input');
+    inputs = document.querySelectorAll('input');    
     inputs.forEach(input => input.addEventListener('keyup', inputValidation))
 
     calculateButton.addEventListener('click', calculate);
     document.querySelector('#clear-button').addEventListener('click', clearInput);
     
 });
+
 
 function inputValidation() {
 
