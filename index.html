@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
 
 <body>
     <header>        
-        <h1>Кредитный калькулятор</h1>
+        <h1>Loan Calculator</h1>
     </header>
 
     <main>
@@ -30,7 +30,7 @@
             <input type="number" id="years" min="1" max="30" required>
         </div>
         <div class="container rate">
-            <label for="rate">Процентная ставка</label>
+            <label for="rate">Interest Rate</label>
             <input type="number" id="rate" step="0.01" min="0" max="100" required>
         </div>
 
@@ -38,8 +38,8 @@
         
         <div class="container btns">
             <!-- buttons -->
-            <button type="button" id="calculate-button">Рассчитать</button>
-            <button type="button" id="clear-button">Очистить</button>
+            <button type="button" id="calculate-button">Calculate</button>
+            <button type="button" id="clear-button">Clear</button>
         </div>
 
         <hr>
@@ -50,11 +50,11 @@
             <p id="payment-mo" class="result"></p>
         </div>
         <div class="container">
-            <p>Начисленные проценты</p>
+            <p>Total interest</p>
             <p id="interest" class="result"></p>
         </div>
         <div class="container">
-            <p>Долг + проценты</p>
+            <p>Loan + interest</p>
             <p id="loan-interest" class="result"></p>
         </div>
 
