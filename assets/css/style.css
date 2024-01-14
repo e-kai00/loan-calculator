@@ -1,131 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-/* font-family: 'Roboto', sans-serif; */
-
-/* 
-#bb9709; - gold
-#666666 -grey for <h> fonts
-#3a3735; -  fonts
-#303030 - banner background
-#1e73be - blue links
-*/
-
 * {
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    box-sizing: border-box;    
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-header {
-    margin-bottom: 20px;
+html, body {
+  height: 100%;
 }
 
 body {
-    line-height: 1.7rem;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: #3a3735;
+  background-image: linear-gradient(to right bottom, #891c5a, #81125f, #780a64, #6d0569, #5f056f, #570873, #4d0b77, #420f7b, #3d127f, #371583, #301888, #271b8c);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ded8ce;
+  font-family: "Ubuntu", sans-serif;
+}
+body header {
+  margin-bottom: 20px;
+}
+body input {
+  background-color: #ded8ce;
+  padding-left: 0.5em;
 }
 
 h1 {
-    margin: 30px 0;
-    text-align: center;
+  margin: 30px 0;
+  text-align: center;
+  letter-spacing: 3px;
+  text-shadow: 0px 0px 5px #4d0b77;
+}
+
+.container {
+  position: relative;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
 }
 
 main {
-    width: 50%;
-    margin: 0 auto;   
-    padding: 25px 20px;
-    border: 1px solid #666;
-    border-radius: 12px;
-    background-color: #f9f8f4;
-    
+  width: 50%;
+  margin: 0 auto;
+  padding: 25px 20px;
+  border-radius: 8px;
+  background-color: rgba(38, 38, 38, 0.7);
+  box-shadow: 0px 0px 10px 3px #b978d0;
 }
-
-input {
-    margin: 2px 0;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #666666;
-}
-
-.container,
-.radio-btn {
-    display: flex;
-    margin-bottom: 5px;
-}
-
-.container *, 
-.radio-btn * {
-    flex: 1;
-}
-
-.btns {
+@media only screen and (max-width: 600px) {
+  main {
     width: 90%;
-    margin: 10px auto;
+  }
 }
-
-button {
-    margin: 5px 4px;
-    padding: 10px 4px;      
-    border: 1px solid #666666;
-    border-radius: 5px;
+main input {
+  margin: 2px 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #666666;
 }
-
-button:hover {
-    background-color: #303030;
-    color: #bb9709;
+main .container,
+main .radio-btn {
+  display: flex;
+  margin-bottom: 5px;
 }
-
-#message {
-    /* line-height: 18px; */
-    color: rgb(198, 60, 60);
-    font-size: .9rem;
-    font-style: italic;
-    float: right;
+main .container *,
+main .radio-btn * {
+  flex: 1;
 }
-
-hr {
-    height: 10px;
-    border: 0;
-    box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
+main .btns {
+  width: 90%;
+  margin: 10px auto;
 }
-
-.rate {
-    position: relative;
+main button {
+  margin: 5px 4px;
+  padding: 10px 4px;
+  border: 1px solid #666666;
+  border-radius: 5px;
+  background-color: #ded8ce;
+  transition: transform 0.3s ease;
+  font-weight: bold;
 }
-
-.rate::after {
-    content: '%';
-    font-size: 1.1rem;    
-    position: absolute;
-    right: 1rem;
-    
+main button:hover {
+  box-shadow: 0px 4px 5px 5px #891c5a;
+  transform: scale(0.9);
 }
-
-.result::after {
-    content: '$';
-    margin-left: 2px;
-    font-size: .9rem;
+main #message {
+  /* line-height: 18px; */
+  color: #c63c3c;
+  font-size: 0.9rem;
+  font-style: italic;
+  float: right;
 }
-
-@media screen and (max-width: 600px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .rate::after {
-        /* content: '%'; */
-        font-size: 1.1rem;
-        /* position: absolute; */
-        right: 1rem;
-        bottom: 0;
-    }
-
-    .result {
-        text-align: center;
-    }
+main hr {
+  display: none;
 }
-
-
+main .rate {
+  position: relative;
+}
+main .rate::after {
+  content: "%";
+  font-size: 1.1rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.1em;
+  color: #262626;
+}
+@media only screen and (max-width: 600px) {
+  main .rate::after {
+    top: auto;
+    bottom: 0.1em;
+  }
+}
+main .result-container {
+  margin-top: 2em;
+}
+@media only screen and (max-width: 600px) {
+  main .result {
+    text-align: center;
+  }
+}
+main .result::before {
+  content: "$";
+  margin-left: 2px;
+  font-size: 0.9rem;
+  padding-right: 0.4em;
+}
+main .years::after {
+  content: "yrs";
+}
+main .currency::after {
+  content: "$";
+}
+main .years::after,
+main .currency::after {
+  font-size: 0.8rem;
+  position: absolute;
+  right: 1rem;
+  top: 0.3em;
+  color: #262626;
+}
+@media only screen and (max-width: 600px) {
+  main .years::after,
+main .currency::after {
+    bottom: 0.2em;
+    top: auto;
+  }
+}
