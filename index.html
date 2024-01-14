@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="" content="">
     <meta name="keywords" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Loan Calculator</title>
 </head>
@@ -19,11 +22,11 @@
     <main>
         <!-- calculator parameters -->
         <div class="container currency">
-            <label for="ammount">Сумма кредита</label>
+            <label for="ammount">Loan Ammount</label>
             <input type="number" id="ammount" min="1000" max="10000000" required>
         </div>
         <div class="container years">
-            <label for="term">Срок кредита</label>
+            <label for="term">Loan Term</label>
             <input type="number" id="years" min="1" max="30" required>
         </div>
         <div class="container rate">
@@ -42,8 +45,8 @@
         <hr>
 
         <!-- calculated results -->
-        <div class="container">
-            <p>Ежемесячный платеж</p>
+        <div class="container result-container">
+            <p>Payment every month</p>
             <p id="payment-mo" class="result"></p>
         </div>
         <div class="container">
