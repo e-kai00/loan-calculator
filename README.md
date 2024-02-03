@@ -1,4 +1,7 @@
 # Loan Calculator 
+
+![loan calculator](/assets/images/loan-calculator.png)
+
 This app is a simple and intuitive web application built using plain (vanilla) JavaScript. This tool is designed to assist users in quickly calculating the repayment details for a loan based on essential parameters such as loan amount, interest rate, and loan term.
 
 ## How to use:
